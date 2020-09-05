@@ -1,0 +1,25 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Weather App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rendikr/NodeJS-Weather-App.git"
+  },
+  "keywords": [
+    "Weather"
+  ],
+  "author": "Rendi K.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rendikr/NodeJS-Weather-App/issues"
+  },
+  "homepage": "https://github.com/rendikr/NodeJS-Weather-App#readme",
+  "dependencies": {
+    "postman-request": "^2.88.1-postman.24"
+  }
+}
