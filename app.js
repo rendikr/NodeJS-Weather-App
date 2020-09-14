@@ -9,17 +9,17 @@ if (!address) {
 }
 
 // set the address from console input as the input parameter
-geocode(address, (err, data) => {
+geocode(address, (err, { location, latitude, longitude } = {}) => {
   if (err) {
     return console.log(err)
   }
 
-  forecast(data.latitude, data.longitude, (err, forecastData) => {
+  forecast(latitude, longitude, (err, forecastData) => {
     if (err) {
       return console.log(err)
     }
 
-    console.log(data.location)
+    console.log(location)
     console.log(forecastData)
   })
 })
