@@ -6,19 +6,19 @@ const geocode = (address, callback) => {
   // destructure response.body as a single variable body
   request({ url, json: true }, (err, { body } = {}) => {
     if (err) {
+      // set the first argument of the callback as the err argument, and the second argument as undefined
       callback('Unable to connect to the location service.', undefined)
-      // set the first argument of the callback as the err argument, and the second argument as undefined
     } else if (body.features.length === 0) {
-      callback('Unable to find location. Try another search.', undefined)
       // set the first argument of the callback as the err argument, and the second argument as undefined
+      callback('Unable to find location. Try another search.', undefined)
     } else {
       const data = body.features[0]
+      // set the first argument of the callback as undefined, and the second argument as the response data
       callback(undefined, {
-        location: data.place_name,
+      location: data.place_name,
         latitude: data.center[1],
         longitude: data.center[0]
       })
-      // set the first argument of the callback as undefined, and the second argument as the response data
     }
   })
 }

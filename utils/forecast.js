@@ -6,16 +6,16 @@ const forecast = (latitude, longitude, callback) => {
   // destructure response.body as a single variable body
   request({ url, json: true }, (err, { body } = {}) => {
     if (err) {
+      // set the first argument of the callback as the err argument, and the second argument as undefined
       callback('Unable to connect to the forecast service.', undefined)
-      // set the first argument of the callback as the err argument, and the second argument as undefined
     } else if (body.error) {
-      callback('Unable to find location.', undefined)
       // set the first argument of the callback as the err argument, and the second argument as undefined
+      callback('Unable to find location.', undefined)
     } else {
       const data = body.current
       const message = 'It is currently ' + data.temperature + ' degrees out and feels like ' + data.feelslike + ' degrees'
-      callback(undefined, message)
       // set the first argument of the callback as undefined, and the second argument as the response data
+      callback(undefined, message)
     }
   })
 }
